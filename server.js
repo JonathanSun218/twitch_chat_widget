@@ -1,4 +1,4 @@
-require('dotenv').config();
+// require('dotenv').config();
 const { refreshTwitchToken, getTwitchToken } = require('./twitchAuth');
 const express = require('express');
 const http = require('http');

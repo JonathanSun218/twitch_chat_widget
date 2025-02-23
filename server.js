@@ -1,5 +1,6 @@
 require('dotenv').config();
 const { refreshTwitchToken, getTwitchToken } = require('./twitchAuth');
+const { connectYoutube } = require('./youtube');
 const express = require('express');
 const http = require('http');
 const socketIO = require('socket.io');
@@ -41,6 +42,7 @@ async function connectTwitch() {
 }
 
 connectTwitch();
+connectYoutube();
 
 app.use(express.static('public'));
 

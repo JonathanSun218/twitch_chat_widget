@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitch Chat Widget</title>
+    <style>
+        #chat-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 15px;
+            border: 1px solid #ccc;
+            height: 300px;
+            overflow-y: scroll;
+        }
+        .chat-message {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        .chat-user {
+            font-weight: bold;
+            color: #9146FF; /* Purple for Twitch usernames */
+        }
+    </style>
+</head>
+<body>
+    <h1>Twitch Chat Widget</h1>
+    <div id="chat-container"></div>
+
+    <!-- Load Socket.IO -->
+    <script src="/socket.io/socket.io.js"></script>
+    <!-- External JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>

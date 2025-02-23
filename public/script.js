@@ -1,6 +1,12 @@
 // Connect to WebSocket
 const socket = io();
 
+socket.on("ping", () => {
+    console.log("Ping received from server, sending pong...");
+    socket.emit("pong");
+    socket.emit("PONG :tmi.twitch.tv")
+})
+
 // Listen for chat messages from the server
 socket.on('chatMessage', (data) => {
     const chatContainer = document.getElementById('chat-container');

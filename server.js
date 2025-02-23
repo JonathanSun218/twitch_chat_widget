@@ -1,4 +1,4 @@
-// require('dotenv').config();
+require('dotenv').config();
 const { refreshTwitchToken, getTwitchToken } = require('./twitchAuth');
 const express = require('express');
 const http = require('http');
@@ -50,6 +50,14 @@ app.get('/', (req, res) => {
 
 io.on('connection', (socket) => {
     console.log("Client connected:", socket.id);
+    const pingInterval = setInterval(() => {
+        console.log("Sending pings to client...");
+        socket.emit("ping");
+        socket.emit("PING :tmi.twitch.tv");
+    }, 240000)
+    socket.on("pong", () => {
+        console.log("Received pong from client");
+    })
     socket.on('disconnect', () => console.log("Client disconnected"));
 });
 

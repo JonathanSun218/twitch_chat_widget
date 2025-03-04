@@ -22,7 +22,7 @@ async function connectTwitch() {
         //     username: process.env.JONATHAN_TWITCH_USERNAME,
         //     password: `oauth:${token}`
         // },
-        channels: [process.env.JONATHAN_TWITCH_CHANNEL]
+        channels: [process.env.SARAH_TWITCH_CHANNEL]
     });
 
     twitchClient.connect();
@@ -42,7 +42,7 @@ async function connectTwitch() {
 }
 
 connectTwitch();
-connectYoutube();
+// connectYoutube();
 
 app.use(express.static('public'));
 
